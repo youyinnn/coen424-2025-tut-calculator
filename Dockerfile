@@ -19,6 +19,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 # to be equal to the cores available.
 # Timeout is set to 0 to disable the timeouts of the workers to allow Cloud Run to handle instance scaling.
 
-EXPOSE $PORT
+EXPOSE 9090
 
-CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 main:app
+CMD exec gunicorn --bind :9090 --workers 1 --threads 8 main:app
